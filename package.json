@@ -1,0 +1,21 @@
+{
+  "name": "frontend-jobfinder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@types/angular": "^1.6.17",
+    "@types/jquery": "^2.0.43",
+    "angular": "^1.6.4",
+    "@uirouter/angularjs": "^1.0.3",
+    "angular-ui-router": "^1.0.3"
+  },
+  "devDependencies": {
+    "typings": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
