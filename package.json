@@ -5,9 +5,10 @@
   "dependencies": {
     "@types/angular": "^1.6.17",
     "@types/jquery": "^2.0.43",
-    "angular": "^1.6.4",
     "@uirouter/angularjs": "^1.0.3",
-    "angular-ui-router": "^1.0.3"
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
+    "moment": "^2.18.1"
   },
   "devDependencies": {
     "typings": "^2.1.1"

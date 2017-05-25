@@ -10,17 +10,5 @@
     function homeController($scope) {
         var vm = this;
         
-
-        // VARIABLES =======================
-
-        activate();
-
-        // PUBLIC FUNCTIONS ================
-
-
-
-        // PRIVATE FUNCTIONS ===============
-
-        function activate() { }
     }
 })();

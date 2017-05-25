@@ -5,22 +5,29 @@
         .module('jobFinderApp')
         .controller('createdJobsController', createdJobsController);
 
-    createdJobsController.inject = ['$scope'];
+    createdJobsController.inject = ['$scope', 'createdJobsService'];
 
-    function createdJobsController($scope) {
+    function createdJobsController($scope, createdJobsService) {
         var vm = this;
-        
+        vm.pendingJobs = [];
+        vm.approvedJobs = [];
 
-        // VARIABLES =======================
-
-        activate();
-
-        // PUBLIC FUNCTIONS ================
+        var createdJobs = createdJobsService.getCreatedJobs(1);
+        sortCreatedJobs(createdJobs);
 
 
 
-        // PRIVATE FUNCTIONS ===============
 
-        function activate() { }
+
+        function sortCreatedJobs(jobs){
+            jobs.forEach(function(job) {
+                if(job.applicantsPending >= 0){
+                    vm.pendingJobs.push(job);
+                }
+                if(job.applicantsApproved > 0){
+                    vm.approvedJobs.push(job);
+                }
+            });
+        }
     }
 })();

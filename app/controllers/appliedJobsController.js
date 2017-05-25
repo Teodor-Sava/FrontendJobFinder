@@ -5,22 +5,17 @@
         .module('jobFinderApp')
         .controller('appliedJobsController', appliedJobsController);
 
-    appliedJobsController.inject = ['$scope'];
+    appliedJobsController.inject = ['$scope', 'appliedJobsService'];
 
-    function appliedJobsController($scope) {
+    function appliedJobsController($scope, appliedJobsService) {
         var vm = this;
+
+        vm.appliedJobs = appliedJobsService.getAppliedJobs();
         
+        vm.getJobDetails = function(id){
+            
+        }
 
-        // VARIABLES =======================
-
-        activate();
-
-        // PUBLIC FUNCTIONS ================
-
-
-
-        // PRIVATE FUNCTIONS ===============
-
-        function activate() { }
+      
     }
 })();

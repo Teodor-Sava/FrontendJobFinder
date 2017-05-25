@@ -9,41 +9,17 @@
     <div class="row">
         <div class="job-list col-sm-10 col-sm-offset-1">
             <ul class="list-group">
-                <li class="list-group-item clearfix">
+                <li class="list-group-item clearfix" ng-repeat="pendingJob in vm.pendingJobs">
                     <span class="col-sm-4">
-                        <h4 > Title sasdas </h4>  
+                        <h4 > {{ pendingJob.title }} </h4>  
                     </span>
                     <span class="col-sm-4 center-text-element"> 
-                        Applicants: 0 
+                        Applicants: {{ pendingJob.applicantsPending}}
                      </span>
                     <span class="col-sm-4 right-text-element">
                         <button type="button" class="btn btn-danger"> DELETE </button>
                      </span>
                 </li>
-                <li class="list-group-item clearfix">
-                    <span class="col-sm-4">
-                        <h4 > Title sasdas </h4>  
-                    </span>
-                    <span class="col-sm-4 center-text-element"> 
-                        Applicants: 0 
-                     </span>
-                    <span class="col-sm-4 right-text-element">
-                        <button type="button" class="btn btn-danger"> DELETE </button>
-                     </span>
-                </li>
-
-                <li class="list-group-item clearfix">
-                    <span class="col-sm-4">
-                        <h4 > Title sasdas </h4>  
-                    </span>
-                    <span class="col-sm-4 center-text-element"> 
-                        Applicants: 0 
-                     </span>
-                    <span class="col-sm-4 right-text-element">
-                        <button type="button" class="btn btn-danger"> DELETE </button>
-                     </span>
-                </li>
-
             </ul>
         </div>
     </div>
@@ -53,12 +29,12 @@
     <div class="row">
         <div class="job-list col-sm-10 col-sm-offset-1">
             <ul class="list-group">
-                <li class="list-group-item clearfix">
+                <li class="list-group-item clearfix" ng-repeat="approvedJob in vm.approvedJobs">
                     <span class="col-sm-4">
-                        <h4 > Title sasdas </h4>  
+                        <h4 > {{ approvedJob.title}} </h4>  
                     </span>
                     <span class="col-sm-4 center-text-element"> 
-                        Employee: John 
+                        Applicants approved: {{approvedJob.applicantsApproved}} 
                      </span>
                     <span class="col-sm-4 right-text-element">
                         <button type="button" class="btn btn-info"> GO TO </button>

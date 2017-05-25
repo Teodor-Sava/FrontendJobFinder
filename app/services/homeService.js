@@ -2,15 +2,18 @@
 'use strict';
 
     angular
-        .module('Module')
-        .service('Service', Service);
+        .module('jobFinderApp')
+        .factory('homeService', homeService);
 
-    Service.inject = ['dependency1'];
-    function Service(dependency1) {
-        this.exposedFn = exposedFn;
+    homeService.inject = ['$http'];
+    function homeService(http) {
+        var service = {
+            exposedFn:exposedFn
+        };
         
-        ////////////////
+        return service;
 
+        ////////////////
         function exposedFn() { }
-        }
+    }
 })();
