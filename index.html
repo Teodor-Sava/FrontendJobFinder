@@ -2,12 +2,12 @@
 <html lang="en" ng-app="jobFinderApp">
 
 <head>
-    <title></title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="assets/css/style.css" rel="stylesheet">
-
     <title>Job Finder - Find One for YOU</title>
+    <base href="/">
 
     <!-- Latest compiled and minified BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -45,7 +45,50 @@
 
 <body>
 
-    <div ui-view></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-jobfinder">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="dashboard">Job Finder</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="profile">Profile</a></li>
+                    <li><a href="register">Register</a></li>
+                    <li><a href="login">Login</a></li>
+
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-lg-2">
+                <nav class="navbar navbar-inverse navbar-fixed-side margin-sidebar">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a ui-sref="dashboard.created-jobs">Created Jobs</a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="dashboard.seek-jobs">Seek Jobs</a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="dashboard.applied-jobs">Applied Jobs</a>
+                        </li>
+                    </ul>
+                    <!-- normal collapsible navbar markup -->
+                </nav>
+            </div>
+            <div class="col-sm-9 col-lg-10">
+                <div class="jumbotron">
+                    <div class="margin-dashboard-ui-view" ui-view></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--UI-BOOTSTRAP-->
@@ -64,6 +107,8 @@
     <script src="app/controllers/seekJobDetailsController.js"></script>
     <script src="app/controllers/createdJobsController.js"></script>
     <script src="app/controllers/createNewJobController.js"></script>
+    <script src="app/controllers/login.js"></script>
+    <script src="app/controllers/register.js"></script>
 
     <!--SERVICES -->
     <!--<script src="app/services/homeService.js"> </script>-->
@@ -71,6 +116,7 @@
     <script src="app/services/appliedJobsService.js"></script>
     <script src="app/services/createdJobsService.js"></script>
     <script src="app/services/homeService.js"></script>
+    <script src="app/services/authenticationService.js"></script>
     <script src="app/services/googleMapsService.js"></script>
 
 </body>

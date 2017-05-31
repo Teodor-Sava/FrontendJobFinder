@@ -2,6 +2,10 @@
     'use strict';
 
     angular.module('jobFinderApp')
+        .config([
+            '$locationProvider', function ($locationProvider) {
+                $locationProvider.html5Mode(true);
+            }])
         .config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
 
@@ -10,7 +14,6 @@
                 //     v: '3.20', //defaults to latest 3.X anyhow
                 //     libraries: 'places' // weather,geometry,visualization
                 // });
-
                 //REDIRECT TO MAIN PAGE IF NO ROUTE
                 $urlRouterProvider.when('', '/');
 
@@ -24,7 +27,26 @@
                 });
                 //====================================================
 
-
+                $stateProvider.state('profile', {
+                    url: '/profile',
+                    templateUrl: 'app/views/userProfile.html',
+                    controller: 'profileController',
+                    controllerAs: 'vm'
+                });
+                 // ==== AUTHENTICATION STATES =============================
+                $stateProvider.state('login', {
+                    url: '/login',
+                    templateUrl: 'app/views/authentication/login.html',
+                    controller: 'Login',
+                    controllerAs: 'vm'
+                });
+                
+                $stateProvider.state('register', {
+                    url: '/register',
+                    templateUrl: 'app/views/authentication/register.html',
+                    controller: 'Register',
+                    controllerAs: 'vm'
+                });
 
                 // ==== DASHBOARD TEMPLATE ===========================
                 $stateProvider.state('dashboard', {
